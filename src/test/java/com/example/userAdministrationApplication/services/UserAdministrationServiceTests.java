@@ -1,7 +1,5 @@
 package com.example.userAdministrationApplication.services;
 
-import com.example.userAdministrationApplication.exceptions.InvalidPasswordException;
-import com.example.userAdministrationApplication.exceptions.UserAlreadyExistException;
 import com.example.userAdministrationApplication.modules.dtos.requests.CreateNewUserRequest;
 import com.example.userAdministrationApplication.modules.dtos.responses.GetUsersResponse;
 import com.example.userAdministrationApplication.modules.dtos.responses.UserResponse;
@@ -18,7 +16,6 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
