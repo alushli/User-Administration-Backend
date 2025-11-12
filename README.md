@@ -229,7 +229,7 @@ Run the test suite with:
 - Spring Retry
 - Spring Aspects
 - Lombok
-- H2 Database (for development)
+- H2 Database
 
 ## License
 
