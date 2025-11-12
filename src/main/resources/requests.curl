@@ -1,0 +1,52 @@
+# ====================================
+# User Administration API - cURL Examples
+# ====================================
+
+# -------------------------------
+# 1. Create New User
+# -------------------------------
+# Create a new user with required fields
+curl -X POST http://localhost:8080/users \
+  -H "Content-Type: application/json" \
+  -d '{
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "password": "StrongPass123!"
+      }'
+
+# -------------------------------
+# 2. Get All Users (with pagination)
+# -------------------------------
+# Get first page with default limit (10)
+curl -X GET "http://localhost:8080/users?page=0&limit=10" \
+  -H "Accept: application/json"
+
+# Get second page with 20 items per page
+curl -X GET "http://localhost:8080/users?page=1&limit=20" \
+  -H "Accept: application/json"
+
+# -------------------------------
+# 3. Deactivate User by ID
+# -------------------------------
+# Deactivate user with ID 1 (soft delete)
+curl -X PUT http://localhost:8080/users/deactivate/1 \
+  -H "Content-Type: application/json"
+
+# -------------------------------
+# 4. Delete User by ID (permanent)
+# -------------------------------
+# Permanently delete user with ID 1
+curl -X DELETE http://localhost:8080/users/1 \
+  -H "Content-Type: application/json"
+
+# -------------------------------
+# 5. Get Users Created in the Last 24 Hours
+# -------------------------------
+# Get first page with default limit (10)
+curl -X GET "http://localhost:8080/users/createdLastDay?page=0&limit=10" \
+  -H "Accept: application/json"
+
+# Get second page with 20 items per page
+curl -X GET "http://localhost:8080/users/createdLastDay?page=1&limit=20" \
+  -H "Accept: application/json"
